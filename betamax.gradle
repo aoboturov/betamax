@@ -9,6 +9,7 @@ buildscript {
 }
 
 apply plugin: "artifactory"
+apply plugin: "maven-publish"
 apply from: "gradle/idea/idea.gradle"
 
 artifactory {
@@ -19,6 +20,8 @@ allprojects {
     plugins.withType(JavaPlugin) {
         sourceCompatibility = "1.6"
         targetCompatibility = "1.6"
+        group = "co.freeside.betamax"
+        version = "2.0-SNAPSHOT"
     }
 
     ext {
